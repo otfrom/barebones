@@ -19,7 +19,7 @@
    (reify om/IRender
      (render [_]
              (dom/h1 nil (:text data))
-             (-> (c/histogram data)
+             (-> (c/histogram data :x-axis [0 1] :bins 20)
                  (s/as-svg :width 500 :height 200)))))
  app-state
  {:target (. js/document (getElementById "app"))})
